@@ -1,12 +1,11 @@
 <?php
-    $getPsw = $_GET["pswlenght"];
-    $pswLenght = strlen(($getPsw));
-    var_dump($pswLenght);
+    include __DIR__ . "/functions.php";
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,9 +14,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
+
 <body class="bg-dark">
     <div class="container">
-        <div class="row justify-content-center text-white">
+        <div class="row justify-content-center text-white ">
             <div class="col-4">
                 <form action="index.php" method="GET">
                     <legend class="fw-bold">Password Generator [GET]</legend>
@@ -27,8 +27,10 @@
                     </div>
                     <button class="btn btn-light text-center">Send</button>
                 </form>
+                <h1 class="my-5">Your Passoword is: <span class="text-danger"> <?php echo randomPassword()?></span></h1>
             </div>
         </div>
     </div>
 </body>
+
 </html>
