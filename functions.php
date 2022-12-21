@@ -4,19 +4,20 @@
 // var_dump($pswLenght);
 function randomPassword()
 {
-    $getPsw = $_GET["pswlenght"];
-    $pswLenght = strlen(($getPsw));
+    $getPsw = $_GET["pswlenght"] ?? '';
+    $pswLenght = strlen(($getPsw)) ?? '';
     $letters = "abcdefghilmnopqrstuvwxyz";
     $capsLetters = "ABCDEFGHILMNOPQRSTUVWXYZ";
     $symbols = " ~!@#$%^&*=+/><";
     $numbers = "123456789";
     $totalSring = $letters . $capsLetters . $symbols . $numbers;
+    $pass = "";
     for ($i = 0; $i < $pswLenght; $i++) {
-        $n = rand(0, strlen($totalSring )- 1);
-        $pass[] = $totalSring[$n];
+        $number = rand(0, strlen($totalSring )- 1);
+        $pass .= $totalSring[$number];
     }
     
-    return implode($pass);
+    return $pass ;
 }
 // echo randomPassword();
 
